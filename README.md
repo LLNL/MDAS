@@ -4,7 +4,7 @@ This software is used to disentangle the forced and unforced components of tropo
 
 ### Accompanying Data and Manuscript
 
-This software is accompanied by the input data, which is available via Zenodo. 
+This software is accompanied by the input data, which is available via Zenodo (doi: [10.5281/zenodo.7199961](https://zenodo.org/record/7199961)). 
 
 The research that this software underpins was documented in:
 
