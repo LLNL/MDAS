@@ -1,6 +1,6 @@
 # MSU Disentanglement Analysis Software (MDAS)
 
-This software is used to disentangle the forced and unforced components of tropospheric temperature change over the satellite era (after 1979) using maps of surface temperature change as a predictor. In general, the software assembles training datasets (from pre-computed surface temperature trend maps and domain averaged tropospheric warming rates), trains statistical/machine learning (ML) algorithms, applies the trained statistical/ML model to climate model data and observations, and then saves the results. A leave-one-out approach is used in which the statistical/ML models are iteratively trained on (N-1) climate model and then applied to the remaining climate model (and observations). Each model includes a large ensemble of model simulations (i.e., >9 members). The software relies on scikit-learn ridge regression, PLS regression, and neural network algorithms. 
+This software is used to disentangle the forced and unforced components of tropospheric temperature change over the satellite era (after 1979) using maps of surface temperature change as a predictor. In general, the software assembles training datasets (from pre-computed surface temperature trend maps and domain averaged tropospheric warming rates), trains statistical/machine learning (ML) algorithms, applies the trained statistical/ML model to climate model data and observations, and then saves the results. A leave-one-out approach is used in which the statistical/ML models are iteratively trained on (N-1) climate models and then applied to the remaining climate model (and observations). Each model includes a large ensemble of model simulations (i.e., >9 members). The software relies on scikit-learn ridge regression, PLS regression, and neural network algorithms (Pedregosa et al., 2011). 
 
 ### Accompanying Data and Manuscript
 
@@ -43,7 +43,7 @@ The software is organized as follows:
         data/mlmodels/.
 
     fx.py
-        Function library (See individual function documentation).
+        Function library (see individual function documentation).
 
     fx_odr.py
         Function library for orthogonal distance regression.
@@ -54,15 +54,15 @@ The software is organized as follows:
     plotting/
         Directory contains scripts to produce individual manuscript figure files.
 
-Note that scripts write to data/mlmodels/, data/predictions/ and data/tuning/. These directories should be created
-before executing run_ml.py and tune_ml.py. Figures are saved to figures/ in both pdf and png format.
+Note that scripts write to `data/mlmodels/`, `data/predictions/`, and `data/tuning/`. These directories should be created
+before executing `run_ml.py` and `tune_ml.py`. Figures are saved to `figures/` in both pdf and png format.
 
 After selecting ML parameters (informed by output from `tune_ml.py`) `run_ml.py` is used to train and execute ML predictions.
 The `plotting/` directory then contains the files to produce individual manuscript figures.
 
 ### Data Description
 
-Data that accompanies this software are derived from other publicly available datasets (see references and URLS below). The data is principally composed of maps of temperature trends and values of area averaged temperature trends. We also include some data used in figures, including a dictionary of the markers and colors used for each climate model in figures and the effective climate sensitivity values derived from Zelinka et al. (2020). The data is organized into three main directories:
+Data that accompanies this software are derived from other publicly available datasets (see the accompanying publication or dataset on Zenodo for details). The data is principally composed of maps of temperature trends and values of area averaged temperature trends. We also include some data used in figures, including a dictionary of the markers and colors used for each climate model in figures and the effective climate sensitivity values derived from Zelinka et al. (2020). The data is organized into three main directories:
 
     trendmaps/
         cesm2bb_ttt_trendmaps.pickle
@@ -137,6 +137,8 @@ Research at Lawrence Livermore National Laboratory (LLNL) was performed under th
 ### References:
 
 F. Pedregosa, et al., Scikit-learn: Machine Learning in Python. J. Mach. Learn. Res. 12, 2825–2830 (2011).
+
+Zelinka, M. D., T. A. Myers, D. T. McCoy, S. Po-Chedley, P. M. Caldwell, P. Ceppi, S. A. Klein, and K. E. Taylor, 2020: Causes of higher climate sensitivity in CMIP6 models, Geophys. Res. Lett., 47, doi:10.1029/2019GL085782.
 
 ### License
 
