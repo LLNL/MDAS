@@ -19,7 +19,7 @@ conda env create -f environment.yml
 conda activate xcdat
 ```
 
-    OR: 
+OR: 
 
 ```
 conda create -n xcdat -c conda-forge xcdat scikit-learn scipy cftime matplotlib cartopy ipython
@@ -34,7 +34,8 @@ The software is organized as follows:
         Conda environment used to produce code.
 
     tune_ml.py
-        Python script to evaluate error associated with different ML parameters. Writes to data/tuning/.
+        Python script to evaluate error associated with different ML parameters.
+        Writes to data/tuning/.
 
     run_ml.py
         Python script to execute machine learning algorithms to produce predicted values for 
@@ -139,4 +140,10 @@ F. Pedregosa, et al., Scikit-learn: Machine Learning in Python. J. Mach. Learn. 
 
 ### License
 
-LLNL-CODE-840617
+MDAS uses the MIT license.
+
+See [LICENSE](https://github.com/LLNL/MDAS/blob/main/LICENSE)
+
+SPDX-License-Identifier: MIT
+
+LLNL-CODE-811652
